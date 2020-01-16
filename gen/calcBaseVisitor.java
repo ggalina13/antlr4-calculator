@@ -44,6 +44,27 @@ public class calcBaseVisitor<T> extends AbstractParseTreeVisitor<T> implements c
 	 * <p>The default implementation returns the result of calling
 	 * {@link #visitChildren} on {@code ctx}.</p>
 	 */
+	@Override public T visitMulexpr(calcParser.MulexprContext ctx) { return visitChildren(ctx); }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation returns the result of calling
+	 * {@link #visitChildren} on {@code ctx}.</p>
+	 */
+	@Override public T visitPowexpr(calcParser.PowexprContext ctx) { return visitChildren(ctx); }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation returns the result of calling
+	 * {@link #visitChildren} on {@code ctx}.</p>
+	 */
+	@Override public T visitToken(calcParser.TokenContext ctx) { return visitChildren(ctx); }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation returns the result of calling
+	 * {@link #visitChildren} on {@code ctx}.</p>
+	 */
 	@Override public T visitLeft(calcParser.LeftContext ctx) { return visitChildren(ctx); }
 	/**
 	 * {@inheritDoc}
@@ -52,13 +73,6 @@ public class calcBaseVisitor<T> extends AbstractParseTreeVisitor<T> implements c
 	 * {@link #visitChildren} on {@code ctx}.</p>
 	 */
 	@Override public T visitRight(calcParser.RightContext ctx) { return visitChildren(ctx); }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation returns the result of calling
-	 * {@link #visitChildren} on {@code ctx}.</p>
-	 */
-	@Override public T visitOp(calcParser.OpContext ctx) { return visitChildren(ctx); }
 	/**
 	 * {@inheritDoc}
 	 *

@@ -47,6 +47,36 @@ public interface calcListener extends ParseTreeListener {
 	 */
 	void exitExpr(calcParser.ExprContext ctx);
 	/**
+	 * Enter a parse tree produced by {@link calcParser#mulexpr}.
+	 * @param ctx the parse tree
+	 */
+	void enterMulexpr(calcParser.MulexprContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link calcParser#mulexpr}.
+	 * @param ctx the parse tree
+	 */
+	void exitMulexpr(calcParser.MulexprContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link calcParser#powexpr}.
+	 * @param ctx the parse tree
+	 */
+	void enterPowexpr(calcParser.PowexprContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link calcParser#powexpr}.
+	 * @param ctx the parse tree
+	 */
+	void exitPowexpr(calcParser.PowexprContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link calcParser#token}.
+	 * @param ctx the parse tree
+	 */
+	void enterToken(calcParser.TokenContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link calcParser#token}.
+	 * @param ctx the parse tree
+	 */
+	void exitToken(calcParser.TokenContext ctx);
+	/**
 	 * Enter a parse tree produced by {@link calcParser#left}.
 	 * @param ctx the parse tree
 	 */
@@ -66,16 +96,6 @@ public interface calcListener extends ParseTreeListener {
 	 * @param ctx the parse tree
 	 */
 	void exitRight(calcParser.RightContext ctx);
-	/**
-	 * Enter a parse tree produced by {@link calcParser#op}.
-	 * @param ctx the parse tree
-	 */
-	void enterOp(calcParser.OpContext ctx);
-	/**
-	 * Exit a parse tree produced by {@link calcParser#op}.
-	 * @param ctx the parse tree
-	 */
-	void exitOp(calcParser.OpContext ctx);
 	/**
 	 * Enter a parse tree produced by {@link calcParser#number}.
 	 * @param ctx the parse tree

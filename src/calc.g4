@@ -6,20 +6,22 @@ strings : assigning ';' strings | ;
 
 assigning : Var '=' expr;
 
-expr : expr op expr
-        | number
-        | variable
-        | left expr right;
+expr : mulexpr ((Plus | Minus) mulexpr)*;
 
+mulexpr : powexpr ((Mul | Div) powexpr)*;
+
+powexpr : <assoc=right> token '**' powexpr | token;
+
+token : number | variable | left expr right;
 
 left : '(';
 right : ')';
 
-op :  '+'
-    | '-'
-    | '/'
-    | '*'
-    ;
+Plus : '+';
+Minus : '-';
+Mul : '*';
+Div : '/';
+Pow : '**';
 
 number : Num;
 

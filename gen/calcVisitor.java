@@ -34,6 +34,24 @@ public interface calcVisitor<T> extends ParseTreeVisitor<T> {
 	 */
 	T visitExpr(calcParser.ExprContext ctx);
 	/**
+	 * Visit a parse tree produced by {@link calcParser#mulexpr}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitMulexpr(calcParser.MulexprContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link calcParser#powexpr}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitPowexpr(calcParser.PowexprContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link calcParser#token}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitToken(calcParser.TokenContext ctx);
+	/**
 	 * Visit a parse tree produced by {@link calcParser#left}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
@@ -45,12 +63,6 @@ public interface calcVisitor<T> extends ParseTreeVisitor<T> {
 	 * @return the visitor result
 	 */
 	T visitRight(calcParser.RightContext ctx);
-	/**
-	 * Visit a parse tree produced by {@link calcParser#op}.
-	 * @param ctx the parse tree
-	 * @return the visitor result
-	 */
-	T visitOp(calcParser.OpContext ctx);
 	/**
 	 * Visit a parse tree produced by {@link calcParser#number}.
 	 * @param ctx the parse tree
