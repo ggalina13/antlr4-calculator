@@ -17,30 +17,6 @@ public class MyVisitor extends calcBaseVisitor {
         return result;
     }
 
-    /*@Override
-    public Integer visitExpr(calcParser.ExprContext ctx) {
-        Integer childCnt = ctx.getChildCount();
-        if (childCnt != 3)
-            return (Integer) visitChildren(ctx);
-        //System.out.println(ctx.getChild(0).getChild(0).getText());
-        if (ctx.getChild(0).getChild(0).getText().equals("("))
-            return (Integer) visit(ctx.getChild(1));
-        Integer leftRes = (Integer) visit(ctx.getChild(0));
-        String op = ctx.getChild(1).getText();
-        Integer rightRes = (Integer) visit(ctx.getChild(2));
-        switch (op) {
-            case "+":
-                return leftRes + rightRes;
-            case "-":
-                return leftRes - rightRes;
-            case "*":
-                return leftRes * rightRes;
-            case "/":
-                return leftRes / rightRes;
-        }
-        return (Integer) visitChildren(ctx);
-    }*/
-
     @Override public Integer visitPowexpr(calcParser.PowexprContext ctx) {
         Integer childCnt = ctx.getChildCount();
         Integer nextChildNum = 0;
